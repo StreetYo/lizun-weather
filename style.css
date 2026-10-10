@@ -1,0 +1,308 @@
+main {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 4px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+section[hidden],
+[hidden] {
+  display: none !important;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Search */
+
+.search {
+  gap: 6px;
+}
+
+.search-bar {
+  flex: none;
+  display: flex;
+  gap: 6px;
+}
+
+#query {
+  flex: 1;
+  min-width: 0;
+  height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: var(--lz-card);
+  color: var(--lz-text);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+#query::placeholder {
+  color: var(--lz-text-tertiary);
+}
+
+#query:focus {
+  border-color: var(--lz-accent);
+}
+
+.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: var(--lz-card);
+}
+
+.close img {
+  width: 14px;
+  height: 14px;
+}
+
+.close:hover {
+  background: var(--lz-card-raised);
+}
+
+.results {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  scrollbar-width: none;
+}
+
+.result {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  width: 100%;
+  height: 25px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 7px;
+  background: none;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.result:hover,
+.result.active {
+  background: var(--lz-card);
+}
+
+.result .name {
+  flex: none;
+  max-width: 60%;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.result .where {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--lz-text-secondary);
+  font-size: 12px;
+  text-overflow: ellipsis;
+}
+
+.note {
+  margin: 0;
+  padding: 2px 8px;
+}
+
+/* Weather */
+
+.weather {
+  gap: 6px;
+}
+
+header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 18px;
+}
+
+.place {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 0 6px 0 2px;
+  height: 18px;
+  border: none;
+  border-radius: 9px;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.place:hover {
+  background: var(--lz-card);
+}
+
+.place img {
+  flex: none;
+  width: 12px;
+  height: 12px;
+}
+
+.place span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.meta img {
+  width: 11px;
+  height: 11px;
+}
+
+.meta.warn {
+  color: #ff9f0a;
+}
+
+.now {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 2px;
+}
+
+.temperature {
+  flex: none;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.condition-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+
+.details span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.condition {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.details .lz-secondary {
+  font-size: 12px;
+}
+
+.hours {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin: 0 0 2px;
+  padding: 5px 4px;
+  list-style: none;
+}
+
+.hours li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hour {
+  color: var(--lz-text-secondary);
+  font-size: 11px;
+  line-height: 13px;
+  white-space: nowrap;
+}
+
+.hour-icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+.rain {
+  height: 11px;
+  color: #64d2ff;
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 11px;
+}
+
+.hours.no-rain .rain {
+  display: none;
+}
+
+.hours.no-rain .hour-icon {
+  margin: 4px 0 3px;
+}
+
+.hour-temperature {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}

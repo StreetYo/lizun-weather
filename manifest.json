@@ -1,0 +1,73 @@
+{
+  "id": "lizun.weather",
+  "name": "Weather",
+  "version": "1.0.0",
+  "author": "Lizun",
+  "description": "The weather now and in the next hours at a place you pick, from Open-Meteo",
+  "entry": "index.html",
+  "width": 300,
+  "permissions": ["storage", "activity"],
+  "network": ["https://api.open-meteo.com", "https://geocoding-api.open-meteo.com"],
+  "settings": [
+    {
+      "key": "temperature",
+      "type": "select",
+      "label": "Temperature",
+      "default": "celsius",
+      "options": [
+        { "value": "celsius", "label": "Celsius" },
+        { "value": "fahrenheit", "label": "Fahrenheit" }
+      ]
+    },
+    {
+      "key": "wind",
+      "type": "select",
+      "label": "Wind speed",
+      "default": "kmh",
+      "options": [
+        { "value": "kmh", "label": "km/h" },
+        { "value": "ms", "label": "m/s" },
+        { "value": "mph", "label": "mph" }
+      ]
+    },
+    {
+      "key": "refresh",
+      "type": "number",
+      "label": "Refresh every",
+      "default": 30,
+      "min": 10,
+      "max": 120,
+      "step": 5,
+      "unit": "min"
+    },
+    {
+      "key": "showInIsland",
+      "type": "toggle",
+      "label": "Show the weather in the closed island",
+      "description": "An icon for the sky and the temperature.",
+      "default": true
+    },
+    {
+      "key": "islandCity",
+      "type": "toggle",
+      "label": "Show the city in the closed island",
+      "default": false
+    }
+  ],
+  "locales": {
+    "ru": {
+      "name": "Погода",
+      "description": "Погода сейчас и на ближайшие часы в выбранном месте, по данным Open-Meteo",
+      "settings": {
+        "temperature": { "label": "Температура", "options": { "celsius": "Цельсий", "fahrenheit": "Фаренгейт" } },
+        "wind": { "label": "Скорость ветра", "options": { "kmh": "км/ч", "ms": "м/с", "mph": "миль/ч" } },
+        "refresh": { "label": "Обновлять каждые", "unit": "мин" },
+        "showInIsland": {
+          "label": "Показывать погоду в закрытом острове",
+          "description": "Значок неба и температура."
+        },
+        "islandCity": { "label": "Показывать город в закрытом острове" }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/__sdk/lizun.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="search" id="search" hidden>
+        <div class="search-bar">
+          <input id="query" type="text" maxlength="80" autocomplete="off" spellcheck="false" />
+          <button class="close" id="cancel" hidden><img src="./icons/close.svg" alt="" /></button>
+        </div>
+        <ul class="results" id="results"></ul>
+        <p class="note lz-secondary" id="search-note" hidden></p>
+      </section>
+
+      <section class="weather" id="weather" hidden>
+        <header>
+          <button class="place" id="place">
+            <img src="./icons/pin.svg" alt="" />
+            <span id="city"></span>
+          </button>
+          <span class="meta lz-secondary" id="meta"></span>
+        </header>
+        <div class="now" id="now">
+          <span class="temperature" id="temperature"></span>
+          <img class="condition-icon" id="condition-icon" alt="" />
+          <div class="details">
+            <span class="condition" id="condition"></span>
+            <span class="lz-secondary" id="feels"></span>
+            <span class="lz-secondary" id="high-low"></span>
+          </div>
+        </div>
+        <ol class="hours lz-card" id="hours"></ol>
+        <div class="message" id="message" hidden>
+          <span class="lz-secondary" id="message-text"></span>
+          <button class="lz-button" id="retry" hidden></button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
